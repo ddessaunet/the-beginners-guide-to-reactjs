@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Beginner's Guide to React 2020</title>
+</head>
+<body>
+<div id="root"></div>
+<script src="https://unpkg.com/react@16.13.1/umd/react.development.js"></script>
+<script src="https://unpkg.com/react-dom@16.13.1/umd/react-dom.development.js"></script>
+<script src="https://unpkg.com/@babel/standalone@7.9.5/babel.js"></script>
+<script type="text/babel">
+    function UsernameForm() {
+        function handleSubmit(event) {
+            event.preventDefault()
+            console.log('submitted')
+            console.dir(event.target)
+            const username = event.target.usernameInput.value;
+            alert(`You entered: ${username}`)
+        }
+        return (
+            <form onSubmit={handleSubmit}>
+                <div>
+                    <label htmlFor="usernameInput">Username:</label>
+                    <input id="usernameInput" type="text" />
+                </div>
+                <button type="submit">Submit</button>
+            </form>
+        );
+    }
+
+    ReactDOM.render(<UsernameForm />, document.getElementById('root'))
+</script>
+</body>
+</html>

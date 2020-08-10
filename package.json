@@ -1,0 +1,13 @@
+{
+	"name": "the-beginner-s-guide-to-reactjs",
+	"version": "1.0.0",
+	"main": "index.html",
+	"scripts": {
+		"start": "npx browser-sync start --server --files \"./**/*.html\" --no-open --no-notify --directory"
+	},
+	"devDependencies": {
+		"browser-sync": "^2.26.7",
+		"parcel-bundler": "^1.6.1"
+	},
+	"keywords": []
+}

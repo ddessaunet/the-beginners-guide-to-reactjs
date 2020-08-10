@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Beginner's Guide to React 2020</title>
+</head>
+<body>
+<div id="root"></div>
+<script src="https://unpkg.com/react@16.13.1/umd/react.development.js"></script>
+<script src="https://unpkg.com/react-dom@16.13.1/umd/react-dom.development.js"></script>
+<script src="https://unpkg.com/@babel/standalone@7.9.5/babel.js"></script>
+<script type="text/babel">
+    function Greeting() {
+        const [name, setName] = React.useState('');
+        console.log(name);
+        const handleChange = event => setName(event.target.value);
+        return (
+            <div>
+                <form>
+                    <label htmlFor="name">Name: </label>
+                    <input onChange={handleChange} id="name" />
+                </form>
+                {name ? <strong>Hello {name}</strong> : 'Please type your name'}
+            </div>
+        )
+    }
+
+    ReactDOM.render(<Greeting />, document.getElementById('root'))
+</script>
+</body>
+</html>
